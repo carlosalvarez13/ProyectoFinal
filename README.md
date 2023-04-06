@@ -29,3 +29,7 @@ En cuanto al css la pagina tendre estilos creados con **tailwind** principalment
 ### Mockup  🖥️
 
 El prototipo de la pagina es el siguiente: https://www.figma.com/file/SBk2u0uRBCSFJ32bOHdg1z/Untitled?node-id=0%3A1&t=Le5LFAm2OvTbJR9A-1
+
+### Despliegue 🚀 
+
+Para desplegar la aplicacion se utilizara en un principio **AWS**, el nombre del dominio de la web sera elegido en un futuro.
