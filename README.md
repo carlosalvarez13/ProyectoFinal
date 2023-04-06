@@ -26,6 +26,6 @@ Para frontend se utilizara **Javascript** apoyado del uso de **Vue** como framew
 
 En cuanto al css la pagina tendre estilos creados con **tailwind** principalmente y para la landing page se utilizara **less**.
 
-### Mockup 
+### Mockup  🖥️
 
 El prototipo de la pagina es el siguiente: https://www.figma.com/file/SBk2u0uRBCSFJ32bOHdg1z/Untitled?node-id=0%3A1&t=Le5LFAm2OvTbJR9A-1
