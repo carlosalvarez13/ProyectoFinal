@@ -15,4 +15,14 @@ La web implementara los siguientes puntos:
 ### Tecnologias 🤖
 
 #### Backend
-En cuanto las tecnologias utilizadas se utilizara principalmente en **backend** como lenguaje php y como framework laravel, para **frontend** como lenguaje usare javascript y como framework Vue y por ultimo en la parte de **CSS** usare tailwind en el backend y en la landing page less.
+
+Para backend se utilizara **PHP** apoyado del uso de **laravel** como framework.
+
+#### Frontend 
+
+Para frontend se utilizara **Javascript** apoyado del uso de **Vue** como framework en la medida de lo posible.
+
+#### CSS
+
+En cuanto al css la pagina tendre estilos creados con **tailwind** principalmente y para la landing page se utilizara **less**.
+
