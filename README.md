@@ -34,6 +34,6 @@ El prototipo de la pagina es el siguiente: https://www.figma.com/file/SBk2u0uRBC
 
 Para desplegar la aplicacion se utilizara en un principio **AWS**, el nombre del dominio de la web sera elegido en un futuro.
 
-### Esquema ERD
+### Esquema ERD 🔑
 
 ![image](https://user-images.githubusercontent.com/123629136/230794096-8d3fa160-3986-42e8-a9db-b9e223c28ddd.png)
