@@ -37,3 +37,6 @@ Para desplegar la aplicacion se utilizara en un principio **AWS**, el nombre del
 ### Esquema ERD 🔑
 
 ![image](https://user-images.githubusercontent.com/123629136/230794096-8d3fa160-3986-42e8-a9db-b9e223c28ddd.png)
+
+### CheckPoint 🚩
+https://youtu.be/bJuV1tN-PuM
