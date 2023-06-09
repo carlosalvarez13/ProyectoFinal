@@ -1,53 +1,9 @@
 @extends("layouts.app")
 
 @section("main")
-    @if(Auth::user()->administrador == 1)   
-    <x-nav-link>
-    </x-nav-link>
-
-    @else
     <x-nav-link-2>
     </x-nav-link-2>
-    @endif
-    @if(Auth::check() && Auth::user()->administrador == 1)
-        <h1 class="flex justify-center text-4xl mt-6 text-sky-400/100">@lang("app.admin")</h1>
-        
 
-        <section id="Projects" class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
-            @foreach($productos as $producto)
-                <div class="w-72 bg-blue-500 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-                    <img src="{{ $producto->FotPro }}" alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
-                    <div class="px-4 py-3 w-72">
-                        <p class="text-lg font-bold text-white truncate block capitalize">{{ Str::limit($producto->NomPro, 13) }}</p>
-                        {{ Str::limit($producto->DesPro, 45) }}
-                        <div class="flex items-center"> 
-                            <p class="text-lg font-semibold text-white cursor-auto my-3">{{ $producto->PrePro }}€</p>
-                            <div class="ml-auto">
-                                <form action="{{ route("producto.editar", $producto) }}" method="post">
-                                    @csrf
-                                    <button class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                                        @lang('app.btn_editar')
-                                    </button>
-                                </form>
-                                <form action="{{ route("producto.borrar", $producto->idPro) }}" method="post" onsubmit="return confirmDelete(event)">
-                                    @csrf
-                                    <button class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                                        @lang('app.btn_borrar')
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </section>
-        <div class="flex justify-center mt-8">
-            {{$productos->links()}}
-        </div>
-        
-        
-
-    @else
 
         @empty($productos)
             @lang('app.vacio')
@@ -90,11 +46,9 @@
         </div>
         
         @endempty
-
-    @endif
         
+
+        
+
     
-
-   
-
 @endsection

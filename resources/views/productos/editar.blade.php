@@ -1,6 +1,8 @@
 @extends("layouts.app")
 
 @section("main")
+<x-nav-link>
+</x-nav-link>
     @csrf
     <h1 class="text-blue-700 text-4xl text-center mt-4">@lang('app.btn_editar')</h1>
         <form class="bg-white p-6 rounded-lg shadow-md" action="{{ route("producto.actualizar", $producto->idPro) }}" method="post">

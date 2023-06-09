@@ -14,15 +14,6 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         
     </head>
-    @if(Auth::user()->administrador == 1)   
-        <x-nav-link>
-        </x-nav-link>
-
-    @else
-        <x-nav-link-2>
-
-        </x-nav-link-2>
-    @endif
 
             
             <!-- Page Content -->

@@ -9,12 +9,14 @@ class ProductoController extends Controller
 {
     public function listarProductos(Request $req) 
     {       
-        return view("productos.main", ["productos" => Producto::all() ]) ;
+        $productos=Producto::paginate(6);
+        return view("productos.main", compact('productos')) ;
     }
 
     public function crearProducto(Request $req) {
         return view("productos.crear");
     }
+    
     
     public function guardarProducto(Request $req) {
 
@@ -23,7 +25,6 @@ class ProductoController extends Controller
         $producto->FotPro=$req->input('foto');
         $producto->DesPro=$req->input('descripcion');
         $producto->PrePro=$req->input('precio');
-        $producto->ValPro=$req->input('valoracion');
 
         $producto->save();
         return redirect()->route('producto.listar');

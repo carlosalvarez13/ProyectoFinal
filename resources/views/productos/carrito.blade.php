@@ -1,6 +1,8 @@
 @extends("layouts.app")
 
 @section("main")
+    <x-nav-link2>
+    </x-nav-link2>
     @empty($carrito)
         Lo siento, pero no hay productos en la base de datos.
     @else
@@ -38,5 +40,6 @@
 
     @endempty
    
+
 
 @endsection

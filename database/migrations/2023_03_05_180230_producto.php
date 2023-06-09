@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('FotPro')->nullable();
             $table->string('DesPro');
             $table->float('PrePro');
-            $table->smallInteger('ValPro');
+            $table->smallInteger('ValPro')->default(0);
             $table->timestamps();
         });
     }

@@ -28,4 +28,10 @@ return [
     'btn_editar' => 'editar',
     'About' => 'Sobre Nostros',
     'Contacto' => 'Contacto',
+    'buscar' => 'Buscar',
+    'usuario' => 'usuario',
+    'usuarios' => 'usuarios',
+    'buscarUsuarios'=> 'Buscar usuarios',
+    'DetallesUsu' => 'Detalles del usuario',
+    'envio' => 'Envios',
 ] ;

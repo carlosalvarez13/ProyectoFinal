@@ -1,10 +1,15 @@
 <?php
 
+use App\Http\Controllers\administrarUsu;
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\CrearController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\administrarUsuController;
+use App\Http\Controllers\BuscadorController;
+use App\Http\Controllers\usuarioController;
+use App\Http\Controllers\IdiomaController;
 use App\Models\Producto;
 
 /*
@@ -31,7 +36,23 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile',  [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+Route::group([
+    "prefix" => "admin",
+    "as" => "admin.",
+    "middleware" => ["auth"]
+], function () {
+    Route::get("/administrar",     [administrarUsuController::class, "adminUsu"])->middleware(['admin'])->name("administrar");
+    Route::get("/borrar{usuario}",     [administrarUsuController::class, "borrarUsu"])->name("borrar");
+});
 
+Route::group([
+    "prefix" => "usuario",
+    "as" => "usuario.",
+    "middleware" => ["auth"]
+], function () {
+    Route::get("/usuario",     [usuarioController::class, "usuarioPerfil"])->name("usuario");
+
+});
 
 Route::group([
     "prefix" => "productos",
@@ -55,5 +76,13 @@ Route::group([
     Route::post("/add{idPro}",     [CarritoController::class, "addProducto"])->name("agregar");
     Route::post("/quitar{idPro}",     [CarritoController::class, "quitarProducto"])->name("quitar");
 });
+
+Route::get('/contacto', function () {
+    return view('paginas.contacto');
+})->name('contacto');
+
+Route::get("/search", [BuscadorController::class, "Buscar"])->name('search');
+
+
 
 require __DIR__ . '/auth.php';
