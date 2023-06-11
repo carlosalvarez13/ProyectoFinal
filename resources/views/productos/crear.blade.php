@@ -5,8 +5,8 @@
 <x-nav-link>
 </x-nav-link>
     @csrf
-    <h1 class="text-blue-700 text-4xl text-center mt-4">Crear</h1>
-        <form class="bg-white p-6 rounded-lg shadow-md" action="{{ route("producto.guardar") }}" method="post">
+    <h1 class="text-blue-700 text-4xl text-center mt-4">Crear</h1> 
+        <form class="bg-white p-6 rounded-lg shadow-md" action="{{ route("producto.guardar") }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-4">
               <label class="block text-gray-700 font-bold mb-2" for="nombre" name="nombre">
@@ -28,11 +28,11 @@
               <input
                 class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="foto"
-                type="text"
-                placeholder="Ingrese una foto"
+                type="file" 
                 name="foto"
               />
             </div>
+            
             <div class="mb-4">
               <label class="block text-gray-700 font-bold mb-2" for="descripcion" name="descripcion" required>
                 @lang('app.descripcion')

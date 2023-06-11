@@ -4,7 +4,7 @@
 <x-nav-link2>
 </x-nav-link2>
 
-<div class="h-screen flex items-center justify-center">
+<div class="mt-8 flex items-center justify-center">
   <div class="max-w-3xl bg-white p-8 rounded-lg shadow-lg flex border-2 border-blue-500">
     <div class="w-1/2 rounded-lg p-4">
       <h1 class="text-2xl text-blue-600 font-semibold mb-6">Contacto</h1>
@@ -42,6 +42,5 @@
     </div>
   </div>
 </div>
-
 
 @endsection

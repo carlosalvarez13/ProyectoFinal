@@ -1,11 +1,20 @@
-@extends("layouts.app")
+<!DOCTYPE html>
+<html lang="en">
 
-@section("main")
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CostaClima</title>
+    <link rel="stylesheet" href="/estilos/style.css">
+</head>
+
+<link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <div class="container">
-
+        
         <div class="snap-section">
             <header>
-                <video src="/fotos_logo_video_fuente/video.mp4" muted autoplay loop></video>
+                <video src="{{ asset('imagenes/video.mp4') }}" muted autoplay loop></video>
                 <svg class="logo" width="34.312374mm" height="37.235287mm" viewBox="0 0 34.312374 37.235287"
                     version="1.1" id="svg5" inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
                     sodipodi:docname="logo.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -78,6 +87,7 @@
                 </svg>
 
                 <h1 class="titulo">CostaClima</h1>
+                <a href="{{ route("login") }}" class="catalogo">Ver Catalogo</a>
                 <div class="capa"></div>
             </header>
         </div>
@@ -87,9 +97,6 @@
             <button class="sonido">activar sonido</button>
         </div>
     </div>
-    <script src="/scripts/canvas.js"></script>
-    <script src="anime-master/lib/anime.min.js"></script>
-    <script type="text/javascript" src="/scripts/Tone.js"></script>
     <script>
         window.onload = function () {
             anime({
@@ -103,11 +110,28 @@
                 direction: 'reverse',
                 easing: 'easeInOutSine',
             });
-            anime({
-                targets: '#rect7627',
-                translateY: [-450, 0],
+
+
+            var logoTimeline = anime.timeline({
+                loop: true,
                 easing: 'easeInOutSine',
             });
-        }
+
+            logoTimeline2
+                .add({
+                    targets: '#path173',
+                    rotate: '-30deg',
+                    duration: 800,
+                })
+                .add({
+                    targets: '#path173',
+                    rotate: '30deg',
+                    duration: 800,
+                });
+        };
     </script>
-@endsection
+    <script src="{{asset('js/scripts/canvas.js')}}"></script>
+    <script src="{{asset('js/scripts/anime-master/lib/anime.min.js')}}"></script>
+    <script src="{{asset('js/scripts/Tone.js')}}"></script>
+</html>
+

@@ -4,7 +4,7 @@
     <x-nav-link2>
     </x-nav-link2>
     <div class="container mx-auto py-8">
-        <div class="max-w-md mx-auto bg-blue-500 rounded p-6 shadow-md">
+        <div class="max-w-md mx-auto bg-blue-400 rounded p-6 shadow-md">
         <h1 class="text-2xl font-bold mb-4">@lang('app.DetallesUsu')</h1>
         <div class="mb-4">
             <label for="name" class="block font-medium text-gray-900">@lang('app.nombre')</label>

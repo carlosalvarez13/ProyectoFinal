@@ -24,7 +24,7 @@ use App\Models\Producto;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('index');
 });
 
 Route::get('/dashboard', function () {
@@ -62,24 +62,28 @@ Route::group([
     Route::get("/",         [ProductoController::class, "listarProductos"])->name("listar");
     Route::get("/crear",     [ProductoController::class, "crearProducto"])->middleware(['admin'])->name("crear");
     Route::post("/guardar",     [ProductoController::class, "guardarProducto"])->name("guardar");
-    Route::post("/borrar{producto}",     [ProductoController::class, "borrarProducto"])->name("borrar");
-    Route::post("/editar{producto}",     [ProductoController::class, "editarProducto"])->middleware(['admin'])->name("editar");
-    Route::post("/actualizar{actualizar}",     [ProductoController::class, "actualizarProducto"])->name("actualizar");
+    Route::post("/borrar/{producto}",     [ProductoController::class, "borrarProducto"])->name("borrar");
+    Route::post("/editar/{producto}",     [ProductoController::class, "editarProducto"])->middleware(['admin'])->name("editar");
+    Route::post("/actualizar/{actualizar}",     [ProductoController::class, "actualizarProducto"])->name("actualizar");
+    Route::get('/producto/{id}', [ProductoController::class, 'infoProducto'])->name('info');
+
 });
 
-Route::group([
-    "prefix" => "carrito",
-    "as" => "carrito.",
-    "middleware" => ["auth"]
-],function () {
-    Route::get("/carrito",  [CarritoController::class, "listarCarrito"])->name("carrito");
-    Route::post("/add{idPro}",     [CarritoController::class, "addProducto"])->name("agregar");
-    Route::post("/quitar{idPro}",     [CarritoController::class, "quitarProducto"])->name("quitar");
-});
 
 Route::get('/contacto', function () {
     return view('paginas.contacto');
 })->name('contacto');
+Route::get('/envios', function () {
+    return view('paginas.envios');
+})->name('envios');
+Route::get('/about', function () {
+    return view('paginas.about');
+})->name('about');
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+
+
 
 Route::get("/search", [BuscadorController::class, "Buscar"])->name('search');
 

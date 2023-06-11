@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use Illuminate\Http\UploadedFile;
 
 class ProductoController extends Controller
 {
@@ -17,18 +18,25 @@ class ProductoController extends Controller
         return view("productos.crear");
     }
     
+    public function guardarProducto(Request $req)
+    {
+        $producto = new Producto;
+        $producto->NomPro = $req->input('nombre');
+        $producto->DesPro = $req->input('descripcion');
+        $producto->PrePro = $req->input('precio');
     
-    public function guardarProducto(Request $req) {
-
-        $producto= new Producto;
-        $producto->NomPro=$req->input('nombre');
-        $producto->FotPro=$req->input('foto');
-        $producto->DesPro=$req->input('descripcion');
-        $producto->PrePro=$req->input('precio');
-
+        if ($req->hasFile('foto')) {
+            $archivo = time().".".$req->file('foto')->getClientOriginalExtension(); 
+            $req->file('foto')->storeAs('/public/imagenes', $archivo); 
+            $producto->FotPro = $archivo;
+        }
+    
         $producto->save();
         return redirect()->route('producto.listar');
     }
+    
+    
+    
 
     public function borrarProducto(Request $req,Producto $producto){
 
@@ -53,4 +61,13 @@ class ProductoController extends Controller
 
         return redirect()->route('producto.listar');
     }
+
+
+    public function infoProducto($id)
+    {
+        $producto = Producto::find($id);
+        return view('productos.info', compact('producto'));
+       
+    }
 }
+    
