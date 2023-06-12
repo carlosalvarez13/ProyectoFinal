@@ -12,7 +12,7 @@
           <li><a class="hover:text-gray-200" href="{{ route('about') }}">@lang('app.About')</a></li>
         </ul>
 
-        <div class="relative md:block mr-8">
+        <div class="relative md:block">
           <form action="{{ route('search') }}" method="GET">
             <div class="relative md:block mr-8">
               <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">

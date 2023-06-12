@@ -14,11 +14,12 @@
 
         <section id="Projects" class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
             @foreach($productos as $producto)
+            <a href="{{ route('producto.info', ['id' => $producto->idPro]) }}" class="w-72 bg-blue-400 shadow-lg rounded-xl transition duration-500 hover:scale-105 hover:shadow-xl">
                 <div class="w-72 bg-blue-400 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
                     <img src="{{ asset("storage/imagenes/{$producto->FotPro}") }}" alt="Product" class="h-64 w-full object-cover rounded-t-xl" />
                     <div class="px-4 py-3 w-72">
                         <p class="text-lg font-bold text-white truncate block capitalize">{{ Str::limit($producto->NomPro, 13) }}</p>
-                        {{ Str::limit($producto->DesPro, 45) }}
+                        {{ Str::limit($producto->DesPro, 35) }}
                         <div class="flex items-center"> 
                             <p class="text-lg font-semibold text-white cursor-auto my-3">{{ $producto->PrePro }}€</p>
                             <div class="ml-auto">
@@ -38,6 +39,7 @@
                         </div>
                     </div>
                 </div>
+            </a>
             @endforeach
         </section>
         <div class="flex justify-center mt-8">
@@ -56,11 +58,12 @@
 
         <section id="Projects" class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-10 gap-x-6 mt-10 mb-5">
             @foreach($productos as $producto)
+            <a href="{{ route('producto.info', ['id' => $producto->idPro]) }}" class="w-72 bg-blue-400 shadow-lg rounded-xl transition duration-500 hover:scale-105 hover:shadow-xl">
                 <div class="w-72 bg-blue-400 shadow-lg rounded-xl transition duration-500 hover:scale-105 hover:shadow-xl">
                     <img src="{{ asset("storage/imagenes/{$producto->FotPro}") }}" alt="Product" class="h-64 w-full object-cover rounded-t-xl" />
                     <div class="p-4">
                         <p class="text-lg font-bold text-gray-800 truncate block capitalize">{{ Str::limit($producto->NomPro, 13) }}</p>
-                        {{ Str::limit($producto->DesPro, 45) }}
+                        {{ Str::limit($producto->DesPro, 35) }}
                         <div class="flex items-center"> 
                             <div class="flex items-center mt-2.5 mb-5">
                                 @for ($i = 0; $i < 5; $i++)
@@ -88,6 +91,7 @@
                         </div>
                     </div>
                 </div>
+            </a>
             @endforeach
         </section>
         

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\Resena;
 use Illuminate\Http\UploadedFile;
 
 class ProductoController extends Controller
@@ -69,5 +70,39 @@ class ProductoController extends Controller
         return view('productos.info', compact('producto'));
        
     }
+
+    public function resena(Request $req)
+    {
+        $validatedData = $req->validate([
+            'idUsu' => 'required',
+            'idPro' => 'required',
+            'nEstrellas' => 'required',
+            'comment' => 'nullable',
+        ]);
+    
+        $resena = new Resena;
+        $resena->idUsu = $validatedData['idUsu'];
+        $resena->idPro = $validatedData['idPro'];
+        $resena->puntuacion = $validatedData['nEstrellas'];
+    
+        if ($req->has('comment')) {
+            $resena->comentario = $validatedData['comment'];
+        }
+    
+        $resena->save();
+    
+    
+        return redirect()->route('producto.info', ['id' => $validatedData['idPro']]);
+    }
+    
+    public function comentarios($idPro)
+    {
+        $valoraciones = Resena::with('usuario', 'producto')
+        ->where('idPro', $idPro )
+        ->paginate(6);
+
+        return view('productos.comentarios')->with('valoraciones', $valoraciones);
+    }
+    
 }
     

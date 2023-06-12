@@ -11,7 +11,7 @@ class BuscadorController extends Controller
     {
         $query = $request->input('query');
     
-        $productos = Producto::where('NomPro', 'like', "%$query%")->paginate(10);
+        $productos = Producto::where('NomPro', 'like', "%$query%")->paginate(6);
     
         return view('productos.resultados', compact('productos'));
     }

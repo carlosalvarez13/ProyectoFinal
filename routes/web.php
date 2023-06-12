@@ -66,6 +66,8 @@ Route::group([
     Route::post("/editar/{producto}",     [ProductoController::class, "editarProducto"])->middleware(['admin'])->name("editar");
     Route::post("/actualizar/{actualizar}",     [ProductoController::class, "actualizarProducto"])->name("actualizar");
     Route::get('/producto/{id}', [ProductoController::class, 'infoProducto'])->name('info');
+    Route::post('/producto', [ProductoController::class, 'resena'])->name('resena');
+    Route::get('/comentarios/{idPro}', [ProductoController::class, 'comentarios'])->name('comentarios');
 
 });
 

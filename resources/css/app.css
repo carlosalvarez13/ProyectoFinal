@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+nav > div:nth-child(2n) > div > p  {
+    display: none !important;
+}
