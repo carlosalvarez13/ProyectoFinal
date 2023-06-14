@@ -9,7 +9,7 @@
 
     @if($valoraciones->isEmpty())
         <div class="flex justify-center items-center bg-blue-300">
-            <p class="text-white text-2xl m-8">Esta publicación aún no tiene valoraciones.</p>
+            <p class="text-white text-2xl m-8">@lang('app.vacioP')</p>
         </div>
     @else
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 m-8">
@@ -18,7 +18,7 @@
                     <p class="text-gray-800 font-bold mb-2">{{ $valoracion->usuario->name }}</p>
                     <hr class="border border-black">
                     <div class="flex items-center">
-                        <p class="text-gray-800">Puntuación:</p>
+                        <p class="text-gray-800">@lang('app.puntuacion')</p>
                         @for ($i = 1; $i <= 5; $i++)
                             @if ($i <= $valoracion->puntuacion)
                                 <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +35,7 @@
                     </div>
 
                     @if ($valoracion->comentario != null)
-                        <p class="text-gray-800">Comentario:</p>
+                        <p class="text-gray-800">@lang('app.comentario')</p>
                     @endif
                     <p class="text-gray-800">{{ $valoracion->comentario }}</p>
                     <p class="text-gray-500 text-sm mt-2">{{ $valoracion->created_at->format('Y-m-d') }}</p>

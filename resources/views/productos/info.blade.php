@@ -15,7 +15,7 @@
             <div class="flex items-center justify-between px-6 py-4 bg-blue-500">
                 <h1 class="text-2xl font-bold text-white">{{ $producto->NomPro }}</h1>
                 <div class="flex items-center">
-                    <span class="text-white mr-2">Valoración:</span>
+                    <span class="text-white mr-2">@lang('app.valoracion')</span>
                     <div class="flex items-center">
                         @for ($i = 0; $i < 5; $i++)
                             @if ($i < $producto->ValPro)

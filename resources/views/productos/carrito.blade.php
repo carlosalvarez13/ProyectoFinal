@@ -7,7 +7,7 @@
         <div class="grid grid-cols-1">
             @if($productosCarrito->isEmpty())
                 <div class="flex justify-center items-center h-9 bg-red-200">
-                    <p class="text-2xl text-gray-800">Lo siento, pero no hay productos en el carrito.</p>
+                    <p class="text-2xl text-gray-800">@lang('app.vacioC')</p>
                 </div>
             @else
                 @foreach($productosCarrito as $producto)
@@ -44,7 +44,7 @@
                 @endforeach
                 <div class="flex justify-center m-5">
                     <div class="bg-blue-300 p-4 rounded-lg">
-                        <p class="text-xl text-gray-800">Precio total del carrito: {{ $productosCarrito->sum(function ($producto) { return $producto->producto->PrePro * $producto->cantidad; }) }}€</p>
+                        <p class="text-xl text-gray-800">@lang('app.totalC'): {{ $productosCarrito->sum(function ($producto) { return $producto->producto->PrePro * $producto->cantidad; }) }}€</p>
                     </div>
                 </div>
             @endif
