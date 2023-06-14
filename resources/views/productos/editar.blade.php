@@ -5,7 +5,7 @@
 </x-nav-link>
     @csrf
     <h1 class="text-blue-700 text-4xl text-center mt-4">@lang('app.btn_editar')</h1>
-        <form class="bg-white p-6 rounded-lg shadow-md" action="{{ route("producto.actualizar", $producto->idPro) }}" method="post">
+        <form class="bg-white p-6 rounded-lg shadow-md" action="{{ route("producto.actualizar", $producto->idPro) }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-4">
               <label class="block text-gray-700 font-bold mb-2" for="nombre" name="nombre">
@@ -28,10 +28,8 @@
               <input
                 class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="foto"
-                type="text"
-                placeholder="@lang('app.editar_foto')"
+                type="file" 
                 name="foto"
-                value="{{$producto->FotPro}}"
               />
             </div>
             <div class="mb-4">

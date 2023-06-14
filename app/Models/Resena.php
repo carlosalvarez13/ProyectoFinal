@@ -31,4 +31,5 @@ class Resena extends Model
     {
         return $this->belongsTo(Producto::class, 'idPro');
     }
+
 }

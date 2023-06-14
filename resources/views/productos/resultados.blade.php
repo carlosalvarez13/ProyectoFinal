@@ -19,7 +19,7 @@
                     <img src="{{ asset("storage/imagenes/{$producto->FotPro}") }}" alt="Product" class="h-64 w-full object-cover rounded-t-xl" />
                     <div class="px-4 py-3 w-72">
                         <p class="text-lg font-bold text-white truncate block capitalize">{{ Str::limit($producto->NomPro, 13) }}</p>
-                        {{ Str::limit($producto->DesPro, 35) }}
+                        {{ Str::limit($producto->DesPro, 38) }}
                         <div class="flex items-center"> 
                             <p class="text-lg font-semibold text-white cursor-auto my-3">{{ $producto->PrePro }}€</p>
                             <div class="ml-auto">
@@ -63,7 +63,7 @@
                     <img src="{{ asset("storage/imagenes/{$producto->FotPro}") }}" alt="Product" class="h-64 w-full object-cover rounded-t-xl" />
                     <div class="p-4">
                         <p class="text-lg font-bold text-gray-800 truncate block capitalize">{{ Str::limit($producto->NomPro, 13) }}</p>
-                        {{ Str::limit($producto->DesPro, 35) }}
+                        {{ Str::limit($producto->DesPro, 38) }}
                         <div class="flex items-center"> 
                             <div class="flex items-center mt-2.5 mb-5">
                                 @for ($i = 0; $i < 5; $i++)

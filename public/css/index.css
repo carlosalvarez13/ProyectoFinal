@@ -75,6 +75,8 @@
         width: 50%;
         height: 70%;
         border: 3px solid #000;
+        object-fit:cover;
+
     }
 
     h2 {
@@ -183,6 +185,8 @@
         width: 50%;
         height: 70%;
         border: 3px solid #000;
+        object-fit:cover;
+
     }
 
     h2 {

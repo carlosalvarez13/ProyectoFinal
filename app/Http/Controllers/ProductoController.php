@@ -37,8 +37,6 @@ class ProductoController extends Controller
     }
     
     
-    
-
     public function borrarProducto(Request $req,Producto $producto){
 
         $producto->delete() ;
@@ -53,16 +51,22 @@ class ProductoController extends Controller
 
     public function actualizarProducto(Request $req, $idProd){
         $producto = Producto::find($idProd);
-        $producto->NomPro=$req->input('nombre');
-        $producto->FotPro=$req->input('foto');
-        $producto->DesPro=$req->input('descripcion');
-        $producto->PrePro=$req->input('precio');
-        $producto->update();
-
-
+        $producto->NomPro = $req->input('nombre');
+        
+        if ($req->hasFile('foto')) {
+            $archivo = time().".".$req->file('foto')->getClientOriginalExtension(); 
+            $req->file('foto')->storeAs('public/imagenes', $archivo); 
+            $producto->FotPro = $archivo;
+        }
+        
+        $producto->DesPro = $req->input('descripcion');
+        $producto->PrePro = $req->input('precio');
+        
+        $producto->save();
+    
         return redirect()->route('producto.listar');
     }
-
+    
 
     public function infoProducto($id)
     {

@@ -9,6 +9,13 @@
     <x-nav-link-2>
     </x-nav-link-2>
     @endif
+    @if(session('success'))
+        <div class="bg-green-200 text-green-800 p-4 mb-4"  id="success-message">
+            {{ session('success') }}
+        </div>
+    @endif
+
+
     @if(Auth::check() && Auth::user()->administrador == 1)
         <h1 class="flex justify-center text-4xl mt-6 text-sky-400/100">@lang("app.admin")</h1>
         
@@ -20,7 +27,7 @@
                     <img src="{{ asset("storage/imagenes/{$producto->FotPro}") }}" alt="Product" class="h-64 w-full object-cover rounded-t-xl" />
                     <div class="px-4 py-3 w-72">
                         <p class="text-lg font-bold text-white truncate block capitalize">{{ Str::limit($producto->NomPro, 13) }}</p>
-                        {{ Str::limit($producto->DesPro, 35) }}
+                        {{ Str::limit($producto->DesPro, 38) }}
                         <div class="flex items-center"> 
                             <p class="text-lg font-semibold text-white cursor-auto my-3">{{ $producto->PrePro }}€</p>
                             <div class="ml-auto">
@@ -64,7 +71,7 @@
                         <img src="{{ asset("storage/imagenes/{$producto->FotPro}") }}" alt="Product" class="h-64 w-full object-cover rounded-t-xl" />
                         <div class="p-4">
                             <p class="text-lg font-bold text-gray-800 truncate block capitalize">{{ Str::limit($producto->NomPro, 13) }}</p>
-                            {{ Str::limit($producto->DesPro, 35) }}
+                            {{ Str::limit($producto->DesPro, 38) }}
                             <div class="flex items-center"> 
                                 <div class="flex items-center mt-2.5 mb-5">
                                     @for ($i = 0; $i < 5; $i++)
@@ -79,15 +86,19 @@
                                 <div class="ml-auto">
                                     <span class="text-3xl font-bold text-gray-900 dark:text-white">{{ $producto->PrePro }}€</span>
                                     <div class="flex items-center justify-between">
-                                        <form action="" method="post" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                        <form action="{{ route('producto.guardar') }}" method="post" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                             @csrf
-                                            <button>
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                                                </svg>
+                                            <input type="hidden" name="idPro" value="{{ $producto->idPro }}">
+                                            <button type="submit" class="w-full">
+                                                <div class="flex items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                    </svg>
+                                                </div>
                                             </button>
                                         </form>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -105,8 +116,14 @@
 
     @endif
         
-    
 
-   
+    <script>
+        setTimeout(function() {
+            var successMessage = document.getElementById('success-message');
+            if (successMessage) {
+                successMessage.style.display = 'none';
+            }
+        }, 1500);
+    </script>
 
 @endsection

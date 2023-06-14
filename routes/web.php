@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\administrarUsu;
-use App\Http\Controllers\CarritoController;
+use App\Http\Controllers\carritoController;
 use App\Http\Controllers\CrearController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -42,7 +42,9 @@ Route::group([
     "middleware" => ["auth"]
 ], function () {
     Route::get("/administrar",     [administrarUsuController::class, "adminUsu"])->middleware(['admin'])->name("administrar");
-    Route::get("/borrar{usuario}",     [administrarUsuController::class, "borrarUsu"])->name("borrar");
+    Route::get("/borrar/{usuario}",     [administrarUsuController::class, "borrarUsu"])->name("borrar");
+    Route::get('/buscar-usuarios', [administrarUsuController::class, "buscarUsu"])->name('buscarUsu');
+
 });
 
 Route::group([
@@ -68,6 +70,9 @@ Route::group([
     Route::get('/producto/{id}', [ProductoController::class, 'infoProducto'])->name('info');
     Route::post('/producto', [ProductoController::class, 'resena'])->name('resena');
     Route::get('/comentarios/{idPro}', [ProductoController::class, 'comentarios'])->name('comentarios');
+    Route::post('/carrito/guardar', [carritoController::class, 'guardar'])->name('guardar');
+    Route::get('/carrito', [carritoController::class, 'mostrar'])->name('carrito');
+    Route::post('/carrito/{id}', [carritoController::class, 'borrar'])->name('cBorrar');
 
 });
 
@@ -88,6 +93,7 @@ Route::get('/login', function () {
 
 
 Route::get("/search", [BuscadorController::class, "Buscar"])->name('search');
+
 
 
 

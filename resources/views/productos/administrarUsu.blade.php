@@ -8,9 +8,11 @@
     <h2 class="text-2xl font-bold mb-4">@lang('app.usuarios')</h2>
 
     <div class="flex justify-between items-center mb-4">
-      <input type="text" placeholder="@lang('app.buscarUsuarios')" class="border border-gray-300 py-2 px-4 rounded">
+      <form action="{{ route('admin.buscarUsu') }}" method="GET">
+        <input type="text" name="keyword" placeholder="@lang('app.buscarUsuarios')" class="border border-gray-300 py-2 px-4 rounded" value="{{ request('keyword') }}">
+        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded ml-2">@lang('app.buscar')</button>
+      </form>
     </div>
-
     <table class="w-full">
         <thead>
           <tr>
@@ -35,6 +37,9 @@
         @endforeach
         </tbody>
       </table>
+      <div class="flex justify-center mt-9">
+        {{ $usuarios->links() }}
+      </div>
       
 
 

@@ -22,4 +22,6 @@ class Producto extends Model
     public function User(){
         return $this->belongsToMany("App\models\User", "Carrito","idUsu","idPro");
     }
+
+    
 }

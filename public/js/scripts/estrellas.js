@@ -1,4 +1,6 @@
 let currentRating = 0;
+let estrellasValoracion = document.getElementsByClassName('text-yellow-300').length;
+console.log(estrellasValoracion);
     function setRating(rating) {
         const stars = document.getElementsByClassName('star');
         
@@ -16,13 +18,13 @@ let currentRating = 0;
         const estrellas = document.getElementsByClassName("text-yellow-300");
         if(document.getElementById("formulario").querySelector('[name="nEstrellas"]')){
             const nEstrellas = document.getElementById("nEstrellas");
-            nEstrellas.value = estrellas.length-1;
+            nEstrellas.value = estrellas.length-estrellasValoracion;
         }else{
             const nEstrellas = document.createElement("input");
             nEstrellas.id = 'nEstrellas';
             nEstrellas.name = "nEstrellas";
             nEstrellas.type = "hidden";
-            nEstrellas.value = estrellas.length-1;
+            nEstrellas.value = estrellas.length-estrellasValoracion;
             document.getElementById('formulario').appendChild(nEstrellas);
         }
     }
