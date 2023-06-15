@@ -3,6 +3,7 @@
 @section("main")
     <x-nav-link2>
     </x-nav-link2>
+    
     <div class="flex justify-center items-center mt-2">
         <div class="grid grid-cols-1">
             @if($productosCarrito->isEmpty())
@@ -42,11 +43,18 @@
                         </div>
                     </div>
                 @endforeach
-                <div class="flex justify-center m-5">
-                    <div class="bg-blue-300 p-4 rounded-lg">
-                        <p class="text-xl text-gray-800">@lang('app.totalC'): {{ $productosCarrito->sum(function ($producto) { return $producto->producto->PrePro * $producto->cantidad; }) }}€</p>
+                <div class="mx-auto m-2">
+                    <div class="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 ">
+                        <div class="flex justify-between">
+                            <p class="text-lg font-bold">@lang('app.totalC'):</p>
+                            <div class="">
+                                <p class="mb-1 text-lg font-bold">{{ $productosCarrito->sum(function ($producto) { return $producto->producto->PrePro * $producto->cantidad; }) }}€</p>
+                            </div>
+                        </div>
+                        <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">@lang('app.comprar')</button>
                     </div>
                 </div>
+                
             @endif
         </div>
     </div>

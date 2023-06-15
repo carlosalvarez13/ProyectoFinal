@@ -58,6 +58,5 @@ return [
     'vacioP' => 'Esta publicación aún no tiene valoraciones.',
     'puntuacion' => 'Puntuación',
     'comentario' => 'Comentario',
-    '' => '',
-    '' => '',
+    'comprar' => 'Comprar',
 ] ;

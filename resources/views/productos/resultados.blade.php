@@ -11,7 +11,7 @@
     @endif
     @if(Auth::check() && Auth::user()->administrador == 1)
         
-
+    <div class="bg-white border border-gray-200 rounded-lg shadow p-6 m-8">
         <section id="Projects" class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
             @foreach($productos as $producto)
             <a href="{{ route('producto.info', ['id' => $producto->idPro]) }}" class="w-72 bg-blue-400 shadow-lg rounded-xl transition duration-500 hover:scale-105 hover:shadow-xl">
@@ -45,6 +45,7 @@
         <div class="flex justify-center mt-8">
             {{$productos->links()}}
         </div>
+    </div>
         
         
         
@@ -55,7 +56,7 @@
             @lang('app.vacio')
         @else
         
-
+        <div class="bg-white border border-gray-200 rounded-lg shadow p-6 m-8">
         <section id="Projects" class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-10 gap-x-6 mt-10 mb-5">
             @foreach($productos as $producto)
             <a href="{{ route('producto.info', ['id' => $producto->idPro]) }}" class="w-72 bg-blue-400 shadow-lg rounded-xl transition duration-500 hover:scale-105 hover:shadow-xl">
@@ -96,10 +97,10 @@
         </section>
         
 
-    <div class="flex justify-center mt-8">
+    <div class="flex justify-center m-4">
         {{ $productos->appends(request()->query())->links() }}
     </div>
-    
+        </div>
         @endempty
 
     @endif

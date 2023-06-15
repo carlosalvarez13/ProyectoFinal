@@ -58,4 +58,5 @@ return [
     'vacioP' => 'This post has no ratings yet.',
     'puntuacion' => 'Rating',
     'comentario' => 'Comment',
+    'comprar' => 'Buy',
     ] ;

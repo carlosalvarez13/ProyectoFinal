@@ -27,5 +27,5 @@ class administrarUsuController extends Controller
         return view("productos.administrarUsu", compact('usuarios'));
     }
     
-    
+
 }

@@ -25,7 +25,8 @@ class Kernel extends HttpKernel
 
 
     protected $routeMiddleware = [
-        'admin' => \App\Http\Middleware\crear::class];
+        'admin' => \App\Http\Middleware\crear::class,
+        'check.locale' => \App\Http\Middleware\LocalizationMiddleware::class,];
     /**
      * The application's route middleware groups.
      *
@@ -39,6 +40,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\LocalizationMiddleware::class,
         ],
 
         'api' => [
