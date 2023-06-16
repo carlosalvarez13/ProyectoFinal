@@ -6,8 +6,8 @@
     </x-nav-link>
 
     @else
-    <x-nav-link-2>
-    </x-nav-link-2>
+    <x-nav-link2>
+    </x-nav-link2>
     @endif
     @if(session('success'))
         <div class="bg-green-200 text-green-800 p-4 mb-4"  id="success-message">

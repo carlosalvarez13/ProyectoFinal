@@ -6,8 +6,8 @@
     </x-nav-link>
 
     @else
-    <x-nav-link-2>
-    </x-nav-link-2>
+    <x-nav-link2>
+    </x-nav-link2>
     @endif
     @if(Auth::check() && Auth::user()->administrador == 1)
         
