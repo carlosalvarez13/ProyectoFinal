@@ -1,8 +1,8 @@
 @extends("layouts.app")
 
 @section("main")
-<x-nav-link2>
-</x-nav-link2>
+<x-nav-link>
+</x-nav-link>
 
 <div class="mt-8 flex items-center justify-center">
   <div class="max-w-3xl bg-white p-8 rounded-lg shadow-lg flex border-2 border-blue-500">

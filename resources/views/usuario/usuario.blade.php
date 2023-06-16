@@ -1,8 +1,8 @@
 @extends("layouts.app")
 
 @section("main")
-    <x-nav-link2>
-    </x-nav-link2>
+<x-nav-link>
+</x-nav-link>
     <div class="container mx-auto py-8">
         <div class="max-w-md mx-auto bg-blue-400 rounded p-6 shadow-md">
         <h1 class="text-2xl font-bold mb-4">@lang('app.DetallesUsu')</h1>

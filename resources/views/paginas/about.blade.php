@@ -1,8 +1,8 @@
 @extends("layouts.app")
 
 @section("main")
-<x-nav-link2>
-</x-nav-link2>
+<x-nav-link>
+</x-nav-link>
 
 <div class="container mx-auto p-8 bg-white shadow-xl mt-8">
     <h1 class="text-3xl font-bold text-blue-900 mb-6">@lang('app.bCosta')</h1>

@@ -1,11 +1,8 @@
 @extends("layouts.app")
 
 @section("main")
-    @if(Auth::user()->administrador == 1)   
-        <x-nav-link></x-nav-link>
-    @else
-        <x-nav-link-2></x-nav-link-2>
-    @endif
+<x-nav-link>
+</x-nav-link>
 
     @if($valoraciones->isEmpty())
         <div class="flex justify-center items-center bg-blue-300">

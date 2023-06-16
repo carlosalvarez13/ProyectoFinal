@@ -1,8 +1,8 @@
 @extends("layouts.app")
 
 @section("main")
-    <x-nav-link2>
-    </x-nav-link2>
+<x-nav-link>
+</x-nav-link>
     
     <div class="flex justify-center items-center mt-2">
         <div class="grid grid-cols-1">

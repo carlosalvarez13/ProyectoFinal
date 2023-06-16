@@ -54,6 +54,8 @@
     </nav>
   </section>
 
+</body>
+
   <script>
     function openDropdown() {
       var dropdown = document.getElementById('dropdown');
@@ -65,4 +67,3 @@
       dropdown.style.display = 'none';
     }
   </script>
-</body>

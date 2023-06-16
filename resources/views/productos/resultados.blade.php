@@ -1,14 +1,8 @@
 @extends("layouts.app")
 
 @section("main")
-    @if(Auth::user()->administrador == 1)   
-    <x-nav-link>
-    </x-nav-link>
-
-    @else
-    <x-nav-link2>
-    </x-nav-link2>
-    @endif
+<x-nav-link>
+</x-nav-link>
     @if(Auth::check() && Auth::user()->administrador == 1)
         
     <div class="bg-white border border-gray-200 rounded-lg shadow p-6 m-8">

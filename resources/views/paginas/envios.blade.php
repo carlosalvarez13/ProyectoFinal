@@ -1,8 +1,8 @@
 @extends("layouts.app")
 
 @section("main")
-<x-nav-link2>
-</x-nav-link2>
+<x-nav-link>
+</x-nav-link>
 
 <div class="container mx-auto p-8 bg-white shadow-xl mt-8">
     <div class="w-full h-64 bg-cover bg-center mb-6" style="background-image: url('{{ asset('imagenes/envios.png') }}');"></div>

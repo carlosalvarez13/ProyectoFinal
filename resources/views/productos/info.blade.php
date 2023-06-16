@@ -1,14 +1,8 @@
 @extends("layouts.app")
 
 @section("main")
-    @if(Auth::user()->administrador == 1)   
-    <x-nav-link>
-    </x-nav-link>
-
-    @else
-    <x-nav-link-2>
-    </x-nav-link-2>
-    @endif
+<x-nav-link>
+</x-nav-link>
 
     <div class="container mx-auto py-8">
         <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
