@@ -43,4 +43,4 @@ https://youtu.be/bJuV1tN-PuM
 
 ### Enlace 🔗
 #### (chrome://flags/#block-insecure-private-network-requests - Block insecure private network requests->disabled para que el css funcione)
-34.200.143.50
+IP Elastica para entrar a la web: 34.200.143.50
