@@ -42,5 +42,5 @@ Para desplegar la aplicacion se utilizara en un principio **AWS**, el nombre del
 https://youtu.be/bJuV1tN-PuM
 
 ### Enlace 🔗
-# (chrome://flags/#block-insecure-private-network-requests - Block insecure private network requests->disabled para que el css funcione)
+### (chrome://flags/#block-insecure-private-network-requests - Block insecure private network requests->disabled para que el css funcione)
 34.200.143.50
