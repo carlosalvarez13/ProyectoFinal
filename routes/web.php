@@ -64,7 +64,7 @@ Route::group([
 ], function () {
     Route::get("/",         [ProductoController::class, "listarProductos"])->name("listar");
     Route::get("/crear",     [ProductoController::class, "crearProducto"])->middleware(['admin'])->name("crear");
-    Route::post("/guardar",     [ProductoController::class, "guardarProducto"])->name("guardar");
+    Route::post("/guardar",     [ProductoController::class, "guardarProducto"])->name("guardarPro");
     Route::post("/borrar/{producto}",     [ProductoController::class, "borrarProducto"])->name("borrar");
     Route::post("/editar/{producto}",     [ProductoController::class, "editarProducto"])->middleware(['admin'])->name("editar");
     Route::post("/actualizar/{actualizar}",     [ProductoController::class, "actualizarProducto"])->name("actualizar");
