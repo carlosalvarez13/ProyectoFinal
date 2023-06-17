@@ -9,12 +9,19 @@ use Illuminate\Http\UploadedFile;
 
 class ProductoController extends Controller
 {
-    public function listarProductos(Request $req) 
-    {       
-        $productos=Producto::paginate(6);
-        return view("productos.main", compact('productos')) ;
+    public function listarProductos(Request $req)
+    {
+        $productos = Producto::paginate(6);
+        
+        $productos->each(function ($producto) {
+            $producto->media_puntuacion = (int) round(Resena::where('idPro', $producto->idPro)
+                ->avg('puntuacion'));
+        });
+        
+        return view("productos.main", compact('productos'));
     }
-
+    
+    
     public function crearProducto(Request $req) {
         return view("productos.crear");
     }
@@ -67,13 +74,16 @@ class ProductoController extends Controller
         return redirect()->route('producto.listar');
     }
     
-
     public function infoProducto($id)
     {
         $producto = Producto::find($id);
+        
+        $producto->media_puntuacion = (int) round(Resena::where('idPro', $producto->idPro)
+            ->avg('puntuacion'));
+        
         return view('productos.info', compact('producto'));
-       
     }
+    
 
     public function resena(Request $req)
     {
