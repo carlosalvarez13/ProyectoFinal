@@ -48,9 +48,9 @@ IP Elastica para entrar a la web: 34.200.143.50
 ### Video 📼
 https://www.youtube.com/watch?v=FbjSQuPXaLs&ab_channel=CarlosAlvarezMoreno
 
-## Documento PDF
+## Documento PDF 📑
 
-Puedes descargar el documento PDF haciendo clic [aquí](CostaClima.pdf).
+Puedes ver el documento PDF haciendo clic [aquí](CostaClima.pdf).
 
 ### Bliografia 📒
 * https://laravel.com/docs/10.x/documentation
