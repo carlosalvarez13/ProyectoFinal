@@ -20,11 +20,11 @@ Para backend se utilizara **PHP** apoyado del uso de **laravel** como framework.
 
 #### Frontend 
 
-Para frontend se utilizara **Javascript** apoyado del uso de **Vue** como framework en la medida de lo posible.
+Para frontend se utilizara **Javascript**.
 
 #### CSS
 
-En cuanto al css la pagina tendre estilos creados con **tailwind** principalmente y para la landing page se utilizara **less**.
+En cuanto al css la pagina tendre estilos creados con **tailwind** principalmente y para la landing page se utilizara **css**.
 
 ### Mockup  🖥️
 
@@ -45,5 +45,9 @@ https://youtu.be/bJuV1tN-PuM
 #### (chrome://flags/#block-insecure-private-network-requests - Block insecure private network requests->disabled para que el css funcione)
 IP Elastica para entrar a la web: 34.200.143.50
 
-### Video 
+### Video 📼
 https://www.youtube.com/watch?v=FbjSQuPXaLs&ab_channel=CarlosAlvarezMoreno
+
+### Bliografia
+https://laravel.com/docs/10.x/documentation
+https://v2.tailwindcss.com/docs
