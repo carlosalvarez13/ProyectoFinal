@@ -12,11 +12,12 @@ class administrarUsuController extends Controller
         return view("productos.administrarUsu", compact('usuarios'));
     }
 
-    public function borrarUsu(Request $req,User $usuario){
-
-        $usuario->delete() ;
-        return view("productos.administrarUsu", ["usuarios" => User::all() ]) ;
+    public function borrarUsu(Request $req, User $usuario) {
+        $usuario->delete();
+        $usuarios = User::paginate(10); 
+        return view("productos.administrarUsu", ["usuarios" => $usuarios]);
     }
+
 
     public function buscarUsu(Request $req) {
         $keyword = $req->input('keyword');
