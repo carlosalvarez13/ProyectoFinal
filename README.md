@@ -49,5 +49,5 @@ IP Elastica para entrar a la web: 34.200.143.50
 https://www.youtube.com/watch?v=FbjSQuPXaLs&ab_channel=CarlosAlvarezMoreno
 
 ### Bliografia
-https://laravel.com/docs/10.x/documentation
-https://v2.tailwindcss.com/docs
+* https://laravel.com/docs/10.x/documentation
+* https://v2.tailwindcss.com/docs
