@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\administrarUsuController;
 use App\Http\Controllers\BuscadorController;
+use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\usuarioController;
 use App\Http\Controllers\IdiomaController;
 use App\Http\Controllers\LocalizationController;
@@ -95,7 +96,7 @@ Route::get('/login', function () {
 
 Route::get("/search", [BuscadorController::class, "Buscar"])->name('search');
 
-
+Route::post('/contacto/guardarContacto', [ContactoController::class, 'guardarContacto'])->name('guardarContacto');
 Route::get("locale/{lange}/",[LocalizationController::class,'setLang']);
 
 require __DIR__ . '/auth.php';

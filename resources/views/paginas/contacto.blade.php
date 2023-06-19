@@ -4,11 +4,17 @@
 <x-nav-link>
 </x-nav-link>
 
+@if(session('success'))
+<div class="bg-green-200 text-green-800 p-4 mb-4"  id="success-message">
+    {{ session('success') }}
+</div>
+@endif
+
 <div class="mt-8 flex items-center justify-center">
   <div class="max-w-3xl bg-white p-8 rounded-lg shadow-lg flex border-2 border-blue-500">
     <div class="w-1/2 rounded-lg p-4">
       <h1 class="text-2xl text-blue-600 font-semibold mb-6">@lang('app.Contacto')</h1>
-      <form method="post">
+      <form method="post" action="{{ route('guardarContacto') }}">
         @csrf
         <div class="mb-4">
           <label for="nombre" class="block font-medium text-gray-800">@lang('app.nombre')</label>
